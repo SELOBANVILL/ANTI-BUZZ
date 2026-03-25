@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anti-Buzz — Materials</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Syne:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <div id="preloader" aria-hidden="true"><div class="sweep"></div></div>
+
+    <div id="transition" aria-hidden="true">
+      <div class="label">Materials</div>
+    </div>
+
+    <svg width="0" height="0" style="position: absolute">
+      <filter id="grainFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="matrix" values="
+          0.90 0 0 0 0
+          0 0.25 0 0 0
+          0 0 0.25 0 0
+          0 0 0 1 0" />
+      </filter>
+    </svg>
+    <div id="grain-layer" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" data-cursor="hover">
+          <span>Anti-Buzz</span><span class="dot">•</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html" data-nav data-cursor="hover">Home</a>
+          <a href="overview.html" data-nav data-cursor="hover">Overview</a>
+          <a href="materials.html" data-nav data-cursor="hover">Materials</a>
+          <a href="design.html" data-nav data-cursor="hover">System Design</a>
+        </nav>
+      </div>
+    </header>
+
+    <div data-barba="wrapper">
+      <main
+        class="page"
+        data-barba="container"
+        data-barba-namespace="materials"
+        data-page-name="Materials Used"
+      >
+        <header class="container page-header">
+          <h1 class="page-title display">
+            <span class="wipe" data-wipe data-page-title>Materials Used</span>
+          </h1>
+        </header>
+
+        <section class="container">
+          <div class="materials-grid" data-materials>
+            <button class="material big" type="button" data-cursor="hover" data-material="arduino" aria-pressed="true">
+              <div class="kicker">01</div>
+              <div class="name">Arduino Uno Board</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+            <button class="material big" type="button" data-cursor="hover" data-material="microphone" aria-pressed="false">
+              <div class="kicker">02</div>
+              <div class="name">Max97814 Microphone Module</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+
+            <button class="material" type="button" data-cursor="hover" data-material="servo" aria-pressed="false">
+              <div class="kicker">03</div>
+              <div class="name">Servo Motor</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+            <button class="material" type="button" data-cursor="hover" data-material="bell" aria-pressed="false">
+              <div class="kicker">04</div>
+              <div class="name">Bell</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+            <button class="material" type="button" data-cursor="hover" data-material="wires" aria-pressed="false">
+              <div class="kicker">05</div>
+              <div class="name">Jumper Wires</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+            <button class="material" type="button" data-cursor="hover" data-material="magnet" aria-pressed="false">
+              <div class="kicker">06</div>
+              <div class="name">Magnet</div>
+              <svg class="stroke" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <rect x="1" y="1" width="98" height="98"></rect>
+              </svg>
+            </button>
+          </div>
+
+          <div class="section">
+            <div class="materials-view" data-material-view>
+              <div class="materials-view__meta">
+                <div class="materials-view__kicker">Selected material</div>
+                <h2 class="materials-view__title display" style="margin: 10px 0 0 0; font-size: 34px">
+                  Arduino Uno Board
+                </h2>
+                <p class="materials-view__desc" style="margin: 10px 0 0 0; color: rgba(240,236,232,.75)">
+                  Click any material card to preview its photo here.
+                </p>
+              </div>
+              <figure class="placeholder has-image narrow materials-view__panel" style="margin: 0; min-height: 340px">
+                <img
+                  data-material-img
+                  src="assets/block-diagram.png"
+                  alt="Preview image for the selected material."
+                />
+              </figure>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 class="display" style="margin:0; font-size:34px; letter-spacing:.02em">Block Diagram</h2>
+            <div class="placeholder-row">
+              <figure class="placeholder has-image narrow" data-cursor="hover" style="margin:0; grid-column: 1 / -1; min-height: 360px">
+                <img src="assets/block-diagram.png" alt="Block diagram showing microphone module input, Arduino Uno board, power supply, and servo motor." />
+              </figure>
+            </div>
+          </div>
+
+          <div class="section">
+            <h2 class="display" style="margin:0; font-size:34px; letter-spacing:.02em">Flowchart</h2>
+            <div class="placeholder-row">
+              <figure class="placeholder has-image narrow" data-cursor="hover" style="margin:0; grid-column: 1 / -1; min-height: 520px">
+                <img src="assets/flowchart.png" alt="Flowchart of Anti-Buzz logic: read sound, compare to threshold, trigger bell via servo when exceeded." />
+              </figure>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="transitions.js"></script>
+  </body>
+</html>
+

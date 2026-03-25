@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anti-Buzz — Overview</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Syne:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
+    <div id="preloader" aria-hidden="true"><div class="sweep"></div></div>
+
+    <div id="transition" aria-hidden="true">
+      <div class="label">Overview</div>
+    </div>
+
+    <svg width="0" height="0" style="position: absolute">
+      <filter id="grainFilter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+        <feColorMatrix type="matrix" values="
+          0.90 0 0 0 0
+          0 0.25 0 0 0
+          0 0 0.25 0 0
+          0 0 0 1 0" />
+      </filter>
+    </svg>
+    <div id="grain-layer" aria-hidden="true"></div>
+
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="index.html" data-cursor="hover">
+          <span>Anti-Buzz</span><span class="dot">•</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html" data-nav data-cursor="hover">Home</a>
+          <a href="overview.html" data-nav data-cursor="hover">Overview</a>
+          <a href="materials.html" data-nav data-cursor="hover">Materials</a>
+          <a href="design.html" data-nav data-cursor="hover">System Design</a>
+        </nav>
+      </div>
+    </header>
+
+    <div data-barba="wrapper">
+      <main
+        class="page"
+        data-barba="container"
+        data-barba-namespace="overview"
+        data-page-name="Overview"
+      >
+        <header class="container page-header">
+          <h1 class="page-title display">
+            <span class="wipe" data-wipe data-page-title>Overview</span>
+          </h1>
+        </header>
+
+        <section class="container section-grid">
+          <article class="block" data-inset-wipe>
+            <div class="idx">01</div>
+            <div>
+              <h3>Purpose</h3>
+              <p>
+                Immoderate and uncontrolled noise disrupts students' ability to study and prevents
+                certain areas from serving as effective spaces for learning. Anti-Buzz automatically
+                detects excessive noise and rings a bell to help monitor and control noise in
+                environments where silence and order are important.
+              </p>
+            </div>
+          </article>
+
+          <article class="block" data-inset-wipe>
+            <div class="idx">02</div>
+            <div>
+              <h3>How It Works</h3>
+              <p>
+                A microphone continuously detects sound levels. The Arduino Uno processes the input
+                and compares it to a predefined threshold.
+              </p>
+              <div class="cards-2">
+                <div class="card">
+                  <div class="title">🔇 Below Threshold — System continues monitoring</div>
+                </div>
+                <div class="card">
+                  <div class="title">🔔 Exceeds Threshold — Servo motor activates, bell rings for a set duration</div>
+                </div>
+              </div>
+              <div class="note">This loop enables real-time noise monitoring and automatic response.</div>
+            </div>
+          </article>
+
+          <article class="block" data-inset-wipe>
+            <div class="idx">03</div>
+            <div>
+              <h3>Benefits</h3>
+              <div class="tags">
+                <div class="tag">Automated noise management</div>
+                <div class="tag">No human supervision needed</div>
+                <div class="tag">Cost-effective &amp; adaptable</div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@barba/core"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/bundled/lenis.min.js"></script>
+    <script src="transitions.js"></script>
+  </body>
+</html>
+
